@@ -20,6 +20,7 @@ def main() -> None:
 
     items = (pathlib.Path(item.replace("\\", "")) for item in sys.argv[1:])
 
+    not_created = []
     for item in items:
         # XXX: it will not create a symlink if there's already a file with that name there,
         # we should instead ask the user what is the correct action (replace, replace all, cancel, etc)
@@ -29,14 +30,24 @@ def main() -> None:
                 shortcut = pathlib.Path(os.path.join(desktop, item.name))
                 shortcut.symlink_to(item, target_is_directory=item.is_dir())
             else:
+                not_created.append(item.name)
                 print(
                     f"Error: couldn't create shortcut for {item.as_posix()!r}"
                     ", not found!"
                 )
         except:
+            not_created.append(item.name)
             print(f"Error: couldn't create shortcut for {item.as_posix()!r}")
 
-    # TODO: inform user of unsucessful shortcurt creations
+    if not_created:
+        text = "\n•  ".join(not_created)
+        subprocess.run(
+            [
+                "zenity",
+                "--error",
+                f"--text=Couldn't create shortcut for the following file(s):\n •  {text}",
+            ]
+        )
 
 
 if __name__ == "__main__":
