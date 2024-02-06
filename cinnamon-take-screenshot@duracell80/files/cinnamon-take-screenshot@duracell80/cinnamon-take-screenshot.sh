@@ -66,7 +66,7 @@ fi
 
 
 # IF GNOME SCREEN SHOT AVAILABLE - TODO SUPPORT OTHER NON MINT ENVIRONMENTS
-# OFFER THE AREA SELECTION TOOL, SAVE DIRECTLY TO DIRECTORY AND OPEN IN PIX
+# OFFER THE AREA SELECTION TOOL, SAVE DIRECTLY TO DIRECTORY AND OPEN IN THE IMAGE VIEWER
 if [[ $(compgen -c | grep -iw 'gnome-screenshot' | head -n1 | wc -l) == "0" ]]; then
     zenity --error --icon-name=security-high-symbolic --text="${LAN00}";
 else
@@ -74,10 +74,11 @@ else
     # ELSE USE UNIVERSAL SECONDS FOR FILE NAME
     TS=$(date +%s)
 
-   gnome-screenshot --area --file="${DIR_TGT}/screenshot-auto_${TS}.png"
-    if [[ $(compgen -c | grep -iw 'pix' | head -n1 | wc -l) == "0" ]]; then
-        exit
-    else
-        pix "${DIR_TGT}/screenshot-auto_${TS}.png" &
+	IMAGE_PATH="${DIR_TGT}/screenshot-auto_${TS}.png"
+
+    gnome-screenshot --area --file=$IMAGE_PATH
+
+	if [[ -f $IMAGE_PATH ]]; then
+        xdg-open $IMAGE_PATH &
     fi
 fi
