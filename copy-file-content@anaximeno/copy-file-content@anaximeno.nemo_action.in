@@ -1,6 +1,6 @@
 [Nemo Action]
 _Name=Copy file content
-_Comment=Copy file content into the clipboard.
+_Comment=Copies text file content into the clipboard.
 Icon-Name=emblem-documents-symbolic
 Dependencies=python3;
 Exec=<copy-file-content@anaximeno/action.py "%F">

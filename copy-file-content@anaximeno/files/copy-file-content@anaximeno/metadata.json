@@ -1,5 +1,5 @@
 {
-    "description": "Copy file content into the clipboard.",
+    "description": "Copies text file content into the clipboard.",
     "uuid": "copy-file-content@anaximeno",
     "name": "Copy file content",
     "author": "anaximeno",
