@@ -33,8 +33,14 @@ class CopyFileContentAction:
             clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
             clipboard.set_text(content, -1)
             clipboard.store()
-            # TODO: consider showing a dialog to confirm the action success,
-            #       which could also be disable with a dont show again button.
+            # TODO: consider allowing disable with a dont show again button.
+            dialog = aui.InfoDialogWindow(
+                window_icon_path=self._win_icon,
+                title=text.ACTION_TITLE,
+                message=text.COPY_SUCCESS,
+            )
+            dialog.run()
+            dialog.destroy()
             log("Content copied to clipboard.")
         except Exception as e:
             dialog = aui.InfoDialogWindow(
