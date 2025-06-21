@@ -19,3 +19,5 @@ COPY_SUCCESS = _("Content copied to clipboard.")
 COPY_FAILED = _("Failed to copy content to clipboard.")
 
 DONT_SHOW_AGAIN = _("Don't show again")
+
+WAYLAND_INSTALL_WL_CLIPBOARD = _("Running under a wayland session,\nmake sure you have the <b>wl-clipboard</b> installed,\nand run again.")
