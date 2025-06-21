@@ -15,8 +15,8 @@ def check_command_available(command: str) -> bool:
     return shutil.which(command) is not None
 
 
-def check_commands_available(commands_list: list[str]) -> bool:
+def check_commands_all_available(commands_list: list[str]) -> bool:
     for cmd in commands_list:
-        if not check_commands_available(cmd):
+        if not check_command_available(cmd):
             return False
     return True

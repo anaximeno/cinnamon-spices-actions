@@ -5,7 +5,7 @@ import text
 import gi
 import subprocess
 import shutil
-from helpers import log, check_commands_available
+from helpers import log, check_commands_all_available
 
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk
@@ -19,7 +19,7 @@ class CopyFileContentAction:
         self._win_icon = aui.get_action_icon_path(text.UUID)
 
     def wayland_check_wl_clipboard_installed(self) -> None:
-        if SESSION == "wayland" and not check_commands_available(
+        if SESSION == "wayland" and not check_commands_all_available(
             ["wl-paste", "wl-copy"]
         ):
             # --
