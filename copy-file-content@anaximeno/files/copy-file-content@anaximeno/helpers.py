@@ -11,13 +11,12 @@ def log(*args, **kwargs):
         print(f"Action {text.UUID}:", *args, **kwargs)
 
 
-def check_command_available(command: string) -> bool:
+def check_command_available(command: str) -> bool:
     return shutil.which(command) is not None
 
 
-def check_commands_available(commands_list: list[string]) -> bool:
+def check_commands_available(commands_list: list[str]) -> bool:
     for cmd in commands_list:
         if not check_commands_available(cmd):
             return False
     return True
-    
