@@ -1,0 +1,7 @@
+{
+    "description": "Backup the selected folder to another location using rsync.",
+    "uuid": "rsync-backup@anaximeno",
+    "name": "Rsync backup",
+    "author": "anaximeno",
+    "version": "1.0.0"
+}

@@ -1,0 +1,108 @@
+# RSYNC BACKUP
+# This file is put in the public domain.
+# anaximeno, 2023
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: rsync-backup@anaximeno 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/linuxmint/cinnamon-spices-actions/"
+"issues\n"
+"POT-Creation-Date: 2026-09-11 20:49-0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. text.py:14
+msgid "Rsync Backup"
+msgstr ""
+
+#. text.py:16
+msgid "Choose the backup destination"
+msgstr ""
+
+#. text.py:19
+msgid ""
+"The destination is inside the folder being backed up. Please choose a "
+"different destination."
+msgstr ""
+
+#. text.py:23
+msgid ""
+"The destination is the same as the folder being backed up. Please choose a "
+"different destination."
+msgstr ""
+
+#. text.py:27
+#, python-format
+msgid ""
+"Backup %(source)s\n"
+"into\n"
+"%(destination)s ?"
+msgstr ""
+
+#. text.py:30
+#, python-format
+msgid "Backing up %s"
+msgstr ""
+
+#. text.py:32
+msgid "Folder successfully backed up!"
+msgstr ""
+
+#. text.py:35
+msgid ""
+"Backup finished, but some item(s) could not be copied, likely because the "
+"destination filesystem doesn't support some characters used in their names "
+"(e.g. FAT/exFAT drives don't allow ':' in filenames). See details below."
+msgstr ""
+
+#. text.py:40
+msgid "Errors"
+msgstr ""
+
+#. text.py:42
+msgid "Open"
+msgstr ""
+
+#. text.py:44
+msgid "Ok"
+msgstr ""
+
+#. text.py:46
+msgid "Couldn't open the destination folder!"
+msgstr ""
+
+#. text.py:48
+#, python-format
+msgid "Error backing up to: %s"
+msgstr ""
+
+#. text.py:50
+msgid "Backup info"
+msgstr ""
+
+#. text.py:52
+msgid ""
+"The backup was cancelled. The destination folder may contain a partial copy."
+msgstr ""
+
+#. metadata.json->description
+msgid "Backup the selected folder to another location using rsync."
+msgstr ""
+
+#. metadata.json->name
+msgid "Rsync backup"
+msgstr ""
+
+#. rsync-backup@anaximeno.nemo_action.in->Name
+msgid "Backup with Rsync"
+msgstr ""
+
+#. rsync-backup@anaximeno.nemo_action.in->Comment
+msgid "Backup the selected folder to another location using rsync"
+msgstr ""

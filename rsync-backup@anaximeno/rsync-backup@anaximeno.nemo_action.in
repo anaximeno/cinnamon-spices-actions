@@ -1,0 +1,10 @@
+[Nemo Action]
+_Name=Backup with Rsync
+_Comment=Backup the selected folder to another location using rsync
+Icon-Name=drive-harddisk-symbolic
+Dependencies=rsync;python3;bash;
+Exec=<rsync-backup@anaximeno/action.py "%F">
+Conditions=exec <rsync-backup@anaximeno/check.sh "%F">;
+Selection=s
+Extensions=dir;
+Separator=" "
